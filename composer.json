@@ -1,0 +1,52 @@
+{
+  "name": "imanghafoori/laravel-tokenize-login",
+  "description": "",
+  "keywords": [
+    "laravel",
+    "laravel5-package",
+    "PHP",
+    "laravel5"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/imanghafoori1/tokenized-login",
+  "authors": [
+    {
+      "name": "Iman Ghafoori",
+      "email": "imanghafoori1@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1.3",
+    "laravel/framework": "~5.1|6.*",
+    "imanghafoori/laravel-nullable": "^1.2",
+    "imanghafoori/laravel-smart-facades": "^1.0"
+  },
+  "autoload-dev": {
+      "psr-4": {
+        "Imanghafoori\\TwoFactorAuthTest\\" : "tests"
+      }
+  },
+  "require-dev": {
+    "orchestra/testbench": "~3.0",
+    "mockery/mockery": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Imanghafoori\\TwoFactorAuth\\" : "src"
+    }
+  },
+  "suggest": {
+    "imanghafoori/laravel-heyman": "It allows to write expressive code to authorize, validate and authenticate.",
+    "imanghafoori/laravel-decorator": "Allows you to easily apply the decorator pattern.",
+    "imanghafoori/laravel-terminator": "Gives you opportunity to refactor your controllers.",
+    "imanghafoori/laravel-anypass": " Allows you login with any password in local environment.",
+    "imanghafoori/laravel-masterpass": "You can easily set a master password without code change."
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Imanghafoori\\TwoFactorAuth\\TwoFactorAuthServiceProvider"
+      ]
+    }
+  }
+}
