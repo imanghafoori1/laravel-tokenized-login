@@ -44,7 +44,7 @@ class LoginTokenNotification extends Notification
     {
         return (new MailMessage)
                     ->line('Your Token is : '.$this->token)
-                    ->action('Notification Action', url('/two-factor-auth/login'))
+                    ->action('Notification Action', route('tokenized_login.login'))
                     ->line('Your will be expired in 2 minutes!');
     }
 

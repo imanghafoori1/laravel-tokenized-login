@@ -43,7 +43,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if (! $this->app->routesAreCached()) {
+        if (! $this->app->routesAreCached() && config('tokenized_login.use_default_routes')) {
             $this->defineRoutes();
         }
 
@@ -56,7 +56,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
 
     private function defineRoutes()
     {
-        Route::middleware('api')
+        Route::middleware(config('tokenized_login.route_middlewares'))
             ->namespace($this->namespace)
             ->group(__DIR__.'./routes.php');
     }
