@@ -1,8 +1,8 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth\Http;
+namespace Imanghafoori\TokenizedLogin\Http;
 
-use Imanghafoori\TwoFactorAuth\Facades\BaseFacade;
+use Imanghafoori\TokenizedLogin\Facades\BaseFacade;
 
 class ResponderFacade extends BaseFacade
 {

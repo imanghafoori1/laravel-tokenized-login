@@ -1,11 +1,11 @@
 <?php
-namespace Imanghafoori\TwoFactorAuth;
+namespace Imanghafoori\TokenizedLogin;
 
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected function getPackageProviders($app)
     {
-        return [\Imanghafoori\TwoFactorAuth\TwoFactorAuthServiceProvider::class];
+        return [\Imanghafoori\TokenizedLogin\TwoFactorAuthServiceProvider::class];
     }
 }

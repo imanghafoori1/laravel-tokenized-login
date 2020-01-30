@@ -1,6 +1,6 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth\TokenStore;
+namespace Imanghafoori\TokenizedLogin\TokenStore;
 
 class FakeTokenStore
 {

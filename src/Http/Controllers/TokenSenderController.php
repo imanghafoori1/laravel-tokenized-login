@@ -1,15 +1,15 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth\Http\Controllers;
+namespace Imanghafoori\TokenizedLogin\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Imanghafoori\TwoFactorAuth\Facades\AuthFacade;
-use Imanghafoori\TwoFactorAuth\Http\ResponderFacade;
 use Illuminate\Support\Facades\Validator;
-use Imanghafoori\TwoFactorAuth\Facades\TokenStoreFacade;
-use Imanghafoori\TwoFactorAuth\Facades\TokenSenderFacade;
-use Imanghafoori\TwoFactorAuth\Facades\UserProviderFacade;
-use Imanghafoori\TwoFactorAuth\Facades\TokenGeneratorFacade;
+use Imanghafoori\TokenizedLogin\Facades\AuthFacade;
+use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
+use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenGeneratorFacade;
 
 class TokenSenderController extends Controller
 {

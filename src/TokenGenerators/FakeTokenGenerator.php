@@ -1,6 +1,6 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth\TokenGenerators;
+namespace Imanghafoori\TokenizedLogin\TokenGenerators;
 
 class FakeTokenGenerator
 {

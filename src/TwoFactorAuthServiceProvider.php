@@ -1,33 +1,29 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth;
+namespace Imanghafoori\TokenizedLogin;
 
 use Illuminate\Support\Facades\Route;
-use Imanghafoori\TwoFactorAuth\Facades\AuthFacade;
+use Imanghafoori\TokenizedLogin\Facades\AuthFacade;
 use Illuminate\Support\ServiceProvider;
-use Imanghafoori\TwoFactorAuth\Http\ResponderFacade;
-use Imanghafoori\TwoFactorAuth\TokenStore\TokenStore;
-use Imanghafoori\TwoFactorAuth\Facades\TokenStoreFacade;
-use Imanghafoori\TwoFactorAuth\Facades\TokenSenderFacade;
-use Imanghafoori\TwoFactorAuth\Authenticator\SessionAuth;
-use Imanghafoori\TwoFactorAuth\TokenStore\FakeTokenStore;
-use Imanghafoori\TwoFactorAuth\Facades\UserProviderFacade;
-use Imanghafoori\TwoFactorAuth\Http\Responses\Responses;
-use Imanghafoori\TwoFactorAuth\Facades\TokenGeneratorFacade;
-use Imanghafoori\TwoFactorAuth\TokenGenerators\TokenGenerator;
-use Imanghafoori\TwoFactorAuth\TokenGenerators\FakeTokenGenerator;
+use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
+use Imanghafoori\TokenizedLogin\TokenStore\TokenStore;
+use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
+use Imanghafoori\TokenizedLogin\Authenticator\SessionAuth;
+use Imanghafoori\TokenizedLogin\TokenStore\FakeTokenStore;
+use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
+use Imanghafoori\TokenizedLogin\Http\Responses\Responses;
+use Imanghafoori\TokenizedLogin\Facades\TokenGeneratorFacade;
+use Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator;
+use Imanghafoori\TokenizedLogin\TokenGenerators\FakeTokenGenerator;
 
 class TwoFactorAuthServiceProvider extends ServiceProvider
 {
-    private $namespace = 'Imanghafoori\TwoFactorAuth\Http\Controllers';
+    private $namespace = 'Imanghafoori\TokenizedLogin\Http\Controllers';
 
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/config/two_factor_auth_config.php',
-            'two_factor_config'
-        );
-
+        $this->mergeConfigFrom(__DIR__ . '/config/tokenized_login.php', 'tokenized_login');
         AuthFacade::shouldProxyTo(SessionAuth::class);
         UserProviderFacade::shouldProxyTo(UserProvider::class);
         if (app()->runningUnitTests()) {
@@ -51,12 +47,17 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
         if (! $this->app->routesAreCached()) {
             $this->defineRoutes();
         }
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/config' => $this->app->configPath()
+            ], 'tokenized_login');
+        }
     }
 
     private function defineRoutes()
     {
-        Route::prefix('api')
-            ->middleware('api')
+        Route::middleware('api')
             ->namespace($this->namespace)
             ->group(__DIR__.'./routes.php');
     }

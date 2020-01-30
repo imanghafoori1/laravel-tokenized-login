@@ -1,6 +1,6 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth\Http\Responses;
+namespace Imanghafoori\TokenizedLogin\Http\Responses;
 
 use Illuminate\Http\Response;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth\TokenStore;
+namespace Imanghafoori\TokenizedLogin\TokenStore;
 
 class TokenStore
 {
     function saveToken($token, $userId)
     {
-        $ttl = config('two_factor_config.token_ttl');
-        cache()->set($token.'_2factor_auth', $userId, $ttl);
+        $ttl = config('tokenized_login.token_ttl');
+        cache()->set($token.'_2factor_auth', $userId, now()->addSeconds($ttl));
     }
 
     function getUidByToken($token)

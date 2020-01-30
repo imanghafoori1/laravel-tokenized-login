@@ -1,17 +1,17 @@
 <?php
 
 use App\User;
-use Imanghafoori\TwoFactorAuth\Facades\TokenStoreFacade;
-use Imanghafoori\TwoFactorAuth\Facades\TokenSenderFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
 
-Route::get('/two-factor-auth/request-token',
+Route::get(config('tokenized_login.route_prefix_url').'/request-token',
     'TokenSenderController@issueToken')
-    ->name('2factor.requestToken');
+    ->name('tokenized_login.requestToken');
 
 
-Route::get('/two-factor-auth/login',
+Route::get(config('tokenized_login.route_prefix_url').'/login',
     'TokenSenderController@loginWithToken')
-    ->name('2factor.login');
+    ->name('tokenized_login.login');
 
 
 if (app()->environment('local')) {

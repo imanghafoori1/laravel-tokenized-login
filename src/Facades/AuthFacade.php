@@ -1,6 +1,6 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth\Facades;
+namespace Imanghafoori\TokenizedLogin\Facades;
 
 class AuthFacade extends BaseFacade
 {

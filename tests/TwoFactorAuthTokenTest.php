@@ -1,14 +1,14 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth;
+namespace Imanghafoori\TokenizedLogin;
 
 use Illuminate\Foundation\Auth\User;
-use Imanghafoori\TwoFactorAuth\Facades\AuthFacade;
-use Imanghafoori\TwoFactorAuth\Http\ResponderFacade;
-use Imanghafoori\TwoFactorAuth\Facades\TokenStoreFacade;
-use Imanghafoori\TwoFactorAuth\Facades\TokenSenderFacade;
-use Imanghafoori\TwoFactorAuth\Facades\UserProviderFacade;
-use Imanghafoori\TwoFactorAuth\Facades\TokenGeneratorFacade;
+use Imanghafoori\TokenizedLogin\Facades\AuthFacade;
+use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
+use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenGeneratorFacade;
 
 class TwoFactorAuthTokenTest extends TestCase
 {
@@ -38,7 +38,7 @@ class TwoFactorAuthTokenTest extends TestCase
             ->with('1q2w3e', $user);
 
         ResponderFacade::shouldReceive('tokenSent')->once();
-        $this->get('/api/two-factor-auth/request-token?email=iman@gmail.com');
+        $this->get('tokenized-login/request-token?email=iman@gmail.com');
     }
 
     public function test_user_is_banned()
@@ -57,7 +57,7 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenStoreFacade::shouldReceive('saveToken')->never();
         TokenSenderFacade::shouldReceive('send')->never();
 
-        $respo = $this->get('/api/two-factor-auth/request-token?email=iman@gmail.com');
+        $respo = $this->get('tokenized-login/request-token?email=iman@gmail.com');
         $respo->assertStatus(400);
         $respo->assertJson(['error' => 'You are blocked']);
     }
@@ -74,7 +74,7 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenStoreFacade::shouldReceive('saveToken')->never();
         TokenSenderFacade::shouldReceive('send')->never();
         ResponderFacade::shouldReceive('userNotFound')->once()->andReturn(response('hello'));
-        $resp = $this->get('/api/two-factor-auth/request-token?email=iman@gmail.com');
+        $resp = $this->get('tokenized-login/request-token?email=iman@gmail.com');
         $resp->assertSee('hello');
     }
 
@@ -88,7 +88,7 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenSenderFacade::shouldReceive('send')->never();
         ResponderFacade::shouldReceive('emailNotValid')->once()
             ->andReturn(response('hello'));
-        $resp = $this->get('/api/two-factor-auth/request-token?email=iman_gmail.com');
+        $resp = $this->get('tokenized-login/request-token?email=iman_gmail.com');
         $resp->assertSee('hello');
     }
 
@@ -103,7 +103,7 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenSenderFacade::shouldReceive('send')->never();
         ResponderFacade::shouldReceive('youShouldBeGuest')->once()
             ->andReturn(response('hello'));
-        $resp = $this->get('/api/two-factor-auth/request-token?email=iman@gmail.com');
+        $resp = $this->get('tokenized-login/request-token?email=iman@gmail.com');
         $resp->assertSee('hello');
     }
 }

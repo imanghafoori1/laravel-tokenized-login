@@ -23,7 +23,7 @@
   },
   "autoload-dev": {
       "psr-4": {
-        "Imanghafoori\\TwoFactorAuthTest\\" : "tests"
+        "Imanghafoori\\TokenizedLogin\\" : "tests"
       }
   },
   "require-dev": {
@@ -32,7 +32,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Imanghafoori\\TwoFactorAuth\\" : "src"
+      "Imanghafoori\\TokenizedLogin\\" : "src"
     }
   },
   "suggest": {
@@ -45,7 +45,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Imanghafoori\\TwoFactorAuth\\TwoFactorAuthServiceProvider"
+        "Imanghafoori\\TokenizedLogin\\TwoFactorAuthServiceProvider"
       ]
     }
   }

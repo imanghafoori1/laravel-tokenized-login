@@ -1,6 +1,6 @@
 <?php
 
-namespace Imanghafoori\TwoFactorAuth;
+namespace Imanghafoori\TokenizedLogin;
 
 use Illuminate\Foundation\Auth\User;
 
