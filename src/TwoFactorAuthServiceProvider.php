@@ -39,7 +39,6 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
         TokenGeneratorFacade::shouldProxyTo($tokenGenerator);
         TokenStoreFacade::shouldProxyTo($tokenStore);
         TokenSenderFacade::shouldProxyTo($tokenSender);
-
     }
 
     public function boot()

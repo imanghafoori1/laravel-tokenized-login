@@ -18,6 +18,5 @@ class UserProvider
         $user = User::find($uid) ?: new User;
 
         return $user->is_ban == 1 ? true : false;
-
     }
 }

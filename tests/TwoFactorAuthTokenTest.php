@@ -80,14 +80,12 @@ class TwoFactorAuthTokenTest extends TestCase
 
     public function test_email_not_valid()
     {
-        UserProviderFacade::shouldReceive('getUserByEmail')
-            ->never();
+        UserProviderFacade::shouldReceive('getUserByEmail')->never();
         UserProviderFacade::shouldReceive('isBanned')->never();
         TokenGeneratorFacade::shouldReceive('generateToken')->never();
         TokenStoreFacade::shouldReceive('saveToken')->never();
         TokenSenderFacade::shouldReceive('send')->never();
-        ResponderFacade::shouldReceive('emailNotValid')->once()
-            ->andReturn(response('hello'));
+        ResponderFacade::shouldReceive('emailNotValid')->once()->andReturn(response('hello'));
         $resp = $this->get('tokenized-login/request-token?email=iman_gmail.com');
         $resp->assertSee('hello');
     }
@@ -95,8 +93,7 @@ class TwoFactorAuthTokenTest extends TestCase
     public function test_user_is_guest()
     {
         AuthFacade::shouldReceive('check')->once()->andReturn(true);
-        UserProviderFacade::shouldReceive('getUserByEmail')
-            ->never();
+        UserProviderFacade::shouldReceive('getUserByEmail')->never();
         UserProviderFacade::shouldReceive('isBanned')->never();
         TokenGeneratorFacade::shouldReceive('generateToken')->never();
         TokenStoreFacade::shouldReceive('saveToken')->never();
