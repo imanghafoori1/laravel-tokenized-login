@@ -8,5 +8,3 @@ class ResponderFacade extends BaseFacade
 {
     //
 }
-
-

@@ -19,14 +19,14 @@ class Responses
     public function youShouldBeGuest()
     {
         return response()->json([
-            'error' => 'you are logged in', Response::HTTP_BAD_REQUEST
+            'error' => 'you are logged in', Response::HTTP_BAD_REQUEST,
         ]);
     }
 
     public function emailNotValid()
     {
         return response()->json([
-            'error' => 'your email is not valid', Response::HTTP_BAD_REQUEST
+            'error' => 'your email is not valid', Response::HTTP_BAD_REQUEST,
         ]);
     }
 
@@ -49,10 +49,3 @@ class Responses
         );
     }
 }
-
-
-
-
-
-
-

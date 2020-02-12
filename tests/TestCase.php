@@ -1,6 +1,6 @@
 <?php
-namespace Imanghafoori\TokenizedLogin;
 
+namespace Imanghafoori\TokenizedLogin;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {

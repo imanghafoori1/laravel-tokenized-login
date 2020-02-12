@@ -4,7 +4,7 @@ namespace Imanghafoori\TokenizedLogin\TokenStore;
 
 class FakeTokenStore
 {
-    function saveToken($token, $userId)
+    public function saveToken($token, $userId)
     {
         //
     }

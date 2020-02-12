@@ -2,24 +2,17 @@
 
 return [
     /**
-     * The life time of tokens in seconds
+     * The life time of tokens in seconds.
      */
     'token_ttl' => 120,
 
-    /**
-     *
-     */
     'use_default_routes' => true,
 
-    /**
-     *
-     */
     'route_middlewares' => ['api'],
     /**
      * Route prefix for token stuff.
-     * Note: it should not end in a slash character
+     * Note: it should not end in a slash character.
      */
-
     'route_prefix_url' => '/tokenized-login',
 
     /**
