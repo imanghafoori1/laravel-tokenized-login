@@ -3,19 +3,19 @@
 namespace Imanghafoori\TokenizedLogin;
 
 use Illuminate\Support\Facades\Route;
-use Imanghafoori\TokenizedLogin\Facades\AuthFacade;
 use Illuminate\Support\ServiceProvider;
-use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
-use Imanghafoori\TokenizedLogin\TokenStore\TokenStore;
-use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
-use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
 use Imanghafoori\TokenizedLogin\Authenticator\SessionAuth;
-use Imanghafoori\TokenizedLogin\TokenStore\FakeTokenStore;
-use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
-use Imanghafoori\TokenizedLogin\Http\Responses\Responses;
+use Imanghafoori\TokenizedLogin\Facades\AuthFacade;
 use Imanghafoori\TokenizedLogin\Facades\TokenGeneratorFacade;
-use Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator;
+use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
+use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
+use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
+use Imanghafoori\TokenizedLogin\Http\Responses\Responses;
 use Imanghafoori\TokenizedLogin\TokenGenerators\FakeTokenGenerator;
+use Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator;
+use Imanghafoori\TokenizedLogin\TokenStore\FakeTokenStore;
+use Imanghafoori\TokenizedLogin\TokenStore\TokenStore;
 
 class TwoFactorAuthServiceProvider extends ServiceProvider
 {
@@ -23,7 +23,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/tokenized_login.php', 'tokenized_login');
+        $this->mergeConfigFrom(__DIR__.'/config/tokenized_login.php', 'tokenized_login');
         AuthFacade::shouldProxyTo(SessionAuth::class);
         UserProviderFacade::shouldProxyTo(UserProvider::class);
         if (app()->runningUnitTests()) {
@@ -43,13 +43,13 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if (! $this->app->routesAreCached() && config('tokenized_login.use_default_routes')) {
+        if (!$this->app->routesAreCached() && config('tokenized_login.use_default_routes')) {
             $this->defineRoutes();
         }
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/config' => $this->app->configPath()
+                __DIR__.'/config' => $this->app->configPath(),
             ], 'tokenized_login');
         }
     }

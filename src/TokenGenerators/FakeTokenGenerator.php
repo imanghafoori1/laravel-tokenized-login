@@ -4,7 +4,7 @@ namespace Imanghafoori\TokenizedLogin\TokenGenerators;
 
 class FakeTokenGenerator
 {
-    function generateToken()
+    public function generateToken()
     {
         return 123456;
     }

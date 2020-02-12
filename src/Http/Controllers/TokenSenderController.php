@@ -5,11 +5,11 @@ namespace Imanghafoori\TokenizedLogin\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
 use Imanghafoori\TokenizedLogin\Facades\AuthFacade;
-use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
-use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
-use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
-use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
 use Imanghafoori\TokenizedLogin\Facades\TokenGeneratorFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
+use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
+use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
 
 class TokenSenderController extends Controller
 {
@@ -68,8 +68,3 @@ class TokenSenderController extends Controller
         }
     }
 }
-
-
-
-
-
