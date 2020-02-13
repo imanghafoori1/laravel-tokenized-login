@@ -23,7 +23,19 @@ php artisan vendor:publish
 Basically, this package introduces 2 endpoints with which you can send requests to.
 
 1. The first one is to generate and send the token to the user
+```php
+GET '/tokenized-login/request-token?email=iman@example.com'
+```
+
 2. The second one accepts the token and authoenticates the user if the token was valid.
+```php
+GET '/tokenized-login/login?email=iman@example.com'
+```
+
+Note: If you are not happy with the shape if the urls, you are free to cancel these out, and redefine them where ever you want.
+you can take a look at the source code to find the controllers they refer to.
+
+To disable the default routes you may set: ```'use_default_routes' => false,``` in the config file.
 
 # Customization:
 You can do a lot of customization and swap the default classes, with your own altenatives since we use the larave-smart-facade package.
