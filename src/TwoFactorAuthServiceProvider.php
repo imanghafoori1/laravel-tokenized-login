@@ -43,7 +43,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if (!$this->app->routesAreCached() && config('tokenized_login.use_default_routes')) {
+        if (! $this->app->routesAreCached() && config('tokenized_login.use_default_routes')) {
             $this->defineRoutes();
         }
 
