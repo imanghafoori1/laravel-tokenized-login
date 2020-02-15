@@ -7,10 +7,11 @@
 [![Build Status](https://travis-ci.org/imanghafoori1/tokenized-login.svg?branch=master)](https://travis-ci.org/imanghafoori1/tokenized-login)
 <a href="https://scrutinizer-ci.com/g/imanghafoori1/tokenized-login"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/tokenized-login.svg?style=flat-square" alt="Quality Score"></img></a>
 
-With this package your can send a temporary token via laravel notifications (can be SMS, email, slack, ... ) to your users and they can login into their account with that 6 digit auto-expiring token.
+With this package creates an auto-expiring single-use 6 digit token, which you can send it via laravel notifications (can be SMS, email, slack, ... ) to your users and they can login into their account with that token by just sending it back to an endpoint, which is also provided out of the box.
+
 Something like telegram login.
 
-you have complete control on how things will happen and you are free to swap the default implementations with your own.
+You have complete control on how things will happen and you are free to swap the default implementations with your own.
 
 # Installation
 ```
@@ -25,16 +26,16 @@ php artisan vendor:publish
 
 
 # Basic usage:
-Basically, this package introduces 2 endpoints with which you can send requests to.
+Basically, this package introduces 2 endpoints, which you can send requests to them.
 
 1. The first one is to generate and send the token to the user
 ```php
-GET '/tokenized-login/request-token?email=iman@example.com'
+POST '/tokenized-login/request-token?email=iman@example.com'
 ```
 
 2. The second one accepts the token and authoenticates the user if the token was valid.
 ```php
-GET '/tokenized-login/login?email=iman@example.com'
+POST '/tokenized-login/login?email=iman@example.com'
 ```
 
 Note: If you are not happy with the shape if the urls, you are free to cancel these out, and redefine them where ever you want.
@@ -45,3 +46,48 @@ To disable the default routes you may set: ```'use_default_routes' => false,``` 
 # Customization:
 You can do a lot of customization and swap the default classes, with your own altenatives since we use the larave-smart-facade package.
 Visit the config file to see what you can change.
+
+--------------------
+
+### :raising_hand: Contributing 
+If you find an issue, or have a better way to do something, feel free to open an issue or a pull request.
+If you use laravel-widgetize in your open source project, create a pull request to provide it's url as a sample application in the README.md file. 
+
+
+### :exclamation: Security
+If you discover any security related issues, please use the `security tab` instead of using the issue tracker.
+
+
+### :star: Your Stars Make Us Do More :star:
+As always if you found this package useful and you want to encourage us to maintain and work on it. Just press the star button to declare your willing.
+
+
+## More from the author:
+
+
+###  Laravel middlewarize
+
+:gem: You can put middleware on any method calls.
+
+- https://github.com/imanghafoori1/laravel-middlewarize
+
+-------------
+
+### Laravel HeyMan
+
+:gem: It allows to write expressive code to authorize, validate and authenticate.
+
+- https://github.com/imanghafoori1/laravel-heyman
+
+
+--------------
+
+### Laravel Terminator
+
+
+ :gem: A minimal yet powerful package to give you opportunity to refactor your controllers.
+
+- https://github.com/imanghafoori1/laravel-terminator
+
+
+------------
