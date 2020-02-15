@@ -2,6 +2,11 @@
 
 # Two factor authentication in Laravel
 
+[![Monthly Downloads](https://poser.pugx.org/imanghafoori/tokenized-login/d/monthly)](https://packagist.org/packages/imanghafoori/tokenized-login)
+[![Latest Stable Version](https://poser.pugx.org/imanghafoori/tokenized-login/v/stable)](https://packagist.org/packages/imanghafoori/tokenized-login)
+[![Build Status](https://travis-ci.org/imanghafoori1/tokenized-login.svg?branch=master)](https://travis-ci.org/imanghafoori1/tokenized-login)
+<a href="https://scrutinizer-ci.com/g/imanghafoori1/tokenized-login"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/tokenized-login.svg?style=flat-square" alt="Quality Score"></img></a>
+
 With this package your can send a temporary token via laravel notifications (can be SMS, email, slack, ... ) to your users and they can login into their account with that 6 digit auto-expiring token.
 Something like telegram login.
 
