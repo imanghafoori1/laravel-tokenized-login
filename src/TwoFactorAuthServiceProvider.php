@@ -4,18 +4,18 @@ namespace Imanghafoori\TokenizedLogin;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Imanghafoori\TokenizedLogin\Facades\AuthFacade;
-use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
-use Imanghafoori\TokenizedLogin\TokenStore\TokenStore;
-use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
-use Imanghafoori\TokenizedLogin\Http\Responses\Responses;
-use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
 use Imanghafoori\TokenizedLogin\Authenticator\SessionAuth;
-use Imanghafoori\TokenizedLogin\TokenStore\FakeTokenStore;
-use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
+use Imanghafoori\TokenizedLogin\Facades\AuthFacade;
 use Imanghafoori\TokenizedLogin\Facades\TokenGeneratorFacade;
-use Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator;
+use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
+use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
+use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
+use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
+use Imanghafoori\TokenizedLogin\Http\Responses\Responses;
 use Imanghafoori\TokenizedLogin\TokenGenerators\FakeTokenGenerator;
+use Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator;
+use Imanghafoori\TokenizedLogin\TokenStore\FakeTokenStore;
+use Imanghafoori\TokenizedLogin\TokenStore\TokenStore;
 
 class TwoFactorAuthServiceProvider extends ServiceProvider
 {
