@@ -37,7 +37,7 @@ return [
 
     /**
      * You can extend Responses class and override
-     * it's methods, to define your own responses
+     * it's methods, to define your own responses.
      */
-    'responses' => \Imanghafoori\TokenizedLogin\Http\Responses\Responses::class
+    'responses' => \Imanghafoori\TokenizedLogin\Http\Responses\Responses::class,
 ];
