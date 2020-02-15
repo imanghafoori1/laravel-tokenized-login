@@ -2,8 +2,8 @@
 
 # Two factor authentication in Laravel
 
-[![Monthly Downloads](https://poser.pugx.org/imanghafoori/laravel-tokenized-login/d/monthly)](https://packagist.org/packages/imanghafoori/laravel-tokenized-login)
-[![Latest Stable Version](https://poser.pugx.org/imanghafoori/laravel-tokenized-login/v/stable)](https://packagist.org/packages/imanghafoori/laravel-tokenized-login)
+[![Monthly Downloads](https://poser.pugx.org/imanghafoori/laravel-tokenize-login/d/monthly)](https://packagist.org/packages/imanghafoori/laravel-tokenize-login)
+[![Latest Stable Version](https://poser.pugx.org/imanghafoori/laravel-tokenize-login/v/stable)](https://packagist.org/packages/imanghafoori/laravel-tokenize-login)
 [![Build Status](https://travis-ci.org/imanghafoori1/tokenized-login.svg?branch=master)](https://travis-ci.org/imanghafoori1/tokenized-login)
 <a href="https://scrutinizer-ci.com/g/imanghafoori1/tokenized-login"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/tokenized-login.svg?style=flat-square" alt="Quality Score"></img></a>
 
