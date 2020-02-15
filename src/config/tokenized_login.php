@@ -8,7 +8,7 @@ return [
 
     /**
      * Here you determine if you are ok with using the routes
-     * defined within the package or you want to define them
+     * defined within the package or you want to define them.
      */
     'use_default_routes' => true,
 
@@ -26,7 +26,7 @@ return [
 
     /**
      * Notification class used to send the token.
-     * You may define your own token sender class
+     * You may define your own token sender class.
      */
     'token_sender' => \Imanghafoori\TokenizedLogin\TokenSender::class,
 ];
