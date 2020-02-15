@@ -56,6 +56,6 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
     {
         Route::middleware(config('tokenized_login.route_middlewares'))
             ->namespace($this->namespace)
-            ->group(__DIR__.'./routes.php');
+            ->group(__DIR__.'/routes.php');
     }
 }

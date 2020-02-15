@@ -38,7 +38,7 @@ class TwoFactorAuthTokenTest extends TestCase
             ->with('1q2w3e', $user);
 
         ResponderFacade::shouldReceive('tokenSent')->once();
-        $this->get('tokenized-login/request-token?email=iman@gmail.com');
+        $this->post('tokenized-login/request-token', ['email' => 'iman@gmail.com']);
     }
 
     public function test_user_is_banned()
@@ -57,7 +57,7 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenStoreFacade::shouldReceive('saveToken')->never();
         TokenSenderFacade::shouldReceive('send')->never();
 
-        $respo = $this->get('tokenized-login/request-token?email=iman@gmail.com');
+        $respo = $this->post('tokenized-login/request-token', ['email' => 'iman@gmail.com']);
         $respo->assertStatus(400);
         $respo->assertJson(['error' => 'You are blocked']);
     }
@@ -74,7 +74,7 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenStoreFacade::shouldReceive('saveToken')->never();
         TokenSenderFacade::shouldReceive('send')->never();
         ResponderFacade::shouldReceive('userNotFound')->once()->andReturn(response('hello'));
-        $resp = $this->get('tokenized-login/request-token?email=iman@gmail.com');
+        $resp = $this->post('tokenized-login/request-token', ['email' => 'iman@gmail.com']);
         $resp->assertSee('hello');
     }
 
@@ -86,7 +86,7 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenStoreFacade::shouldReceive('saveToken')->never();
         TokenSenderFacade::shouldReceive('send')->never();
         ResponderFacade::shouldReceive('emailNotValid')->once()->andReturn(response('hello'));
-        $resp = $this->get('tokenized-login/request-token?email=iman_gmail.com');
+        $resp = $this->post('tokenized-login/request-token', ['email' => 'iman_gmail.com']);
         $resp->assertSee('hello');
     }
 
@@ -100,7 +100,7 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenSenderFacade::shouldReceive('send')->never();
         ResponderFacade::shouldReceive('youShouldBeGuest')->once()
             ->andReturn(response('hello'));
-        $resp = $this->get('tokenized-login/request-token?email=iman@gmail.com');
+        $resp = $this->post('tokenized-login/request-token', ['email' => 'iman@gmail.com']);
         $resp->assertSee('hello');
     }
 }
