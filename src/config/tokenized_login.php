@@ -18,5 +18,5 @@ return [
     /**
      * Notification class used to send the token to user.
      */
-    'notification_class' => \Imanghafoori\TokenizedLogin\LoginTokenNotification::class,
+    'token_sender' => \Imanghafoori\TokenizedLogin\TokenSender::class,
 ];
