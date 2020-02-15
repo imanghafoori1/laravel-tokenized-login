@@ -47,6 +47,17 @@ To disable the default routes you may set: ```'use_default_routes' => false,``` 
 You can do a lot of customization and swap the default classes, with your own altenatives since we use the larave-smart-facade package.
 Visit the config file to see what you can change.
 
+If you want to swap the default implementations behind the facades with your own, you can do it within the `boot` method of any service provider class like this :
+
+```php
+public function boot() 
+{
+     TokenStoreFacade::shouldProxyTo(MyTokenGenerator::class);
+}
+
+```
+All the facades have a `shouldProxyTo` method which you can call, but remember not to do it within the `register` method, but only in `boot`.
+
 --------------------
 
 ### :raising_hand: Contributing 
