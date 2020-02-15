@@ -11,9 +11,7 @@ use Imanghafoori\TokenizedLogin\Facades\TokenSenderFacade;
 use Imanghafoori\TokenizedLogin\Facades\TokenStoreFacade;
 use Imanghafoori\TokenizedLogin\Facades\UserProviderFacade;
 use Imanghafoori\TokenizedLogin\Http\ResponderFacade;
-use Imanghafoori\TokenizedLogin\Http\Responses\Responses;
 use Imanghafoori\TokenizedLogin\TokenGenerators\FakeTokenGenerator;
-use Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator;
 use Imanghafoori\TokenizedLogin\TokenStore\FakeTokenStore;
 use Imanghafoori\TokenizedLogin\TokenStore\TokenStore;
 
@@ -32,10 +30,10 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
             $tokenSender = FakeTokenSender::class;
         } else {
             $tokenSender = config('tokenized_login.token_sender');
-            $tokenGenerator = TokenGenerator::class;
+            $tokenGenerator = config('tokenized_login.token_generator');
             $tokenStore = TokenStore::class;
         }
-        ResponderFacade::shouldProxyTo(Responses::class);
+        ResponderFacade::shouldProxyTo(config('tokenized_login.responses'));
         TokenGeneratorFacade::shouldProxyTo($tokenGenerator);
         TokenStoreFacade::shouldProxyTo($tokenStore);
         TokenSenderFacade::shouldProxyTo($tokenSender);

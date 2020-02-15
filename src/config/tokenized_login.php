@@ -29,4 +29,15 @@ return [
      * You may define your own token sender class.
      */
     'token_sender' => \Imanghafoori\TokenizedLogin\TokenSender::class,
+
+    /**
+     * You can change the way you generate the token by define you own class.
+     */
+    'token_generator' => \Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator::class,
+
+    /**
+     * You can extend Responses class and override
+     * it's methods, to define your own responses
+     */
+    'responses' => \Imanghafoori\TokenizedLogin\Http\Responses\Responses::class
 ];
