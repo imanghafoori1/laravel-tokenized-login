@@ -45,5 +45,5 @@ return [
      * You can change the way you fetch the user from your database
      * by defining a custom user provider class, and set it here.
      */
-    'user_provider' => \Imanghafoori\TokenizedLogin\UserProvider::class
+    'user_provider' => \Imanghafoori\TokenizedLogin\UserProvider::class,
 ];
