@@ -15,8 +15,6 @@ class UserProvider
 
     public function isBanned($uid)
     {
-        $user = User::find($uid) ?: new User();
-
-        return $user->is_ban == 1 ? true : false;
+        return false;
     }
 }

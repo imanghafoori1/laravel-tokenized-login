@@ -40,4 +40,10 @@ return [
      * it's methods, to define your own responses.
      */
     'responses' => \Imanghafoori\TokenizedLogin\Http\Responses\Responses::class,
+
+    /**
+     * You can change the way you fetch the user from your database
+     * by defining a custom user provider class, and set it here.
+     */
+    'user_provider' => \Imanghafoori\TokenizedLogin\UserProvider::class
 ];
