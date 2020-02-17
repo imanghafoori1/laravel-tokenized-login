@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/imanghafoori1/tokenized-login.svg?branch=master)](https://travis-ci.org/imanghafoori1/tokenized-login)
 <a href="https://scrutinizer-ci.com/g/imanghafoori1/tokenized-login"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/tokenized-login.svg?style=flat-square" alt="Quality Score"></img></a>
 
-With this package creates an auto-expiring single-use 6 digit token, which you can send it via laravel notifications (can be SMS, email, slack, ... ) to your users and they can login into their account with that token by just sending it back to an endpoint, which is also provided out of the box.
+This package creates an auto-expiring single-use 6 digit token, which you can send it (can be SMS, email, slack, etc ) to your users and they can login into their account with that token by just sending it back to an endpoint, which is also provided out of the box.
 
 Something like telegram login.
 
