@@ -9,7 +9,7 @@
 
 This package creates an auto-expiring single-use 6 digit token, which you can send it (can be SMS, email, slack, etc ) to your users and they can login into their account with that token by just sending it back to an endpoint, which is also provided out of the box.
 
-Something like telegram login.
+Exactly like alternate login method in Instagram.
 
 You have complete control on how things will happen and you are free to swap the default implementations with your own.
 
@@ -41,7 +41,7 @@ POST '/tokenized-login/login?email=iman@example.com'
 Note: If you are not happy with the shape if the urls, you are free to cancel these out, and redefine them where ever you want.
 you can take a look at the source code to find the controllers they refer to.
 
-To disable the default routes you may set: ```'use_default_routes' => false,``` in the config file.
+To disable the default routes you may set: ```'use_default_routes' => false,``` in the tokenized_login config file.
 
 # Customization:
 You can do a lot of customization and swap the default classes, with your own altenatives since we use the larave-smart-facade package.
