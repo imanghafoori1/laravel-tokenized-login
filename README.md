@@ -6,6 +6,8 @@
 [![Latest Stable Version](https://poser.pugx.org/imanghafoori/laravel-tokenize-login/v/stable)](https://packagist.org/packages/imanghafoori/laravel-tokenize-login)
 [![Build Status](https://travis-ci.org/imanghafoori1/laravel-tokenized-login.svg?branch=master)](https://travis-ci.org/imanghafoori1/laravel-tokenized-login)
 <a href="https://scrutinizer-ci.com/g/imanghafoori1/tokenized-login"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/tokenized-login.svg?style=flat-square" alt="Quality Score"></img></a>
+[![StyleCI](https://github.styleci.io/repos/237041801/shield?branch=master)](https://github.styleci.io/repos/237041801)
+[![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=round-square)](LICENSE.md)
 
 This package creates an auto-expiring single-use 6 digit token, which you can send it (can be SMS, email, slack, etc ) to your users and they can login into their account with that token by just sending it back to an endpoint, which is also provided out of the box.
 
