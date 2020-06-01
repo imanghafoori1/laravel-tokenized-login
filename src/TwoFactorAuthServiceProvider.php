@@ -23,7 +23,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/config/tokenized_login.php', 'tokenized_login');
         AuthFacade::shouldProxyTo(SessionAuth::class);
-        UserProviderFacade::shouldProxyTo(UserProvider::class);
+        UserProviderFacade::shouldProxyTo(config('tokenized_login.user_provider'));
         if (app()->runningUnitTests()) {
             $tokenGenerator = FakeTokenGenerator::class;
             $tokenStore = FakeTokenStore::class;
