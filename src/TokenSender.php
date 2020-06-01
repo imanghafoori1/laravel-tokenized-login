@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Notification;
 
 class TokenSender
 {
-    public function send($user, $token)
+    public function send($token, $user)
     {
         $notif = new LoginTokenNotification($token);
 
