@@ -7,6 +7,12 @@ return [
     'token_ttl' => 120,
 
     /**
+     * The rules to validate the the receiver address.
+     * Usually it is an email address, but maybe a phone number
+     */
+    'address_validation_rules' => ['required', 'email'],
+
+    /**
      * Here you determine if you are ok with using the routes
      * defined within the package or you want to define them.
      */
@@ -46,4 +52,10 @@ return [
      * by defining a custom user provider class, and set it here.
      */
     'user_provider' => \Imanghafoori\TokenizedLogin\UserProvider::class,
+
+    /**
+     * You may provide a middleware throttler to throttle
+     * the requesting and submission of the tokens.
+     */
+    'throttler_middleware' => 'throttle:3,1'
 ];

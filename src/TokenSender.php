@@ -8,8 +8,8 @@ class TokenSender
 {
     public function send($token, $user)
     {
-        $notif = new LoginTokenNotification($token);
+        $notification = new LoginTokenNotification($token);
 
-        Notification::sendNow($user, $notif);
+        Notification::sendNow($user, $notification);
     }
 }

@@ -55,7 +55,9 @@ class TokenSenderController extends Controller
 
     private function validateEmailIsValid()
     {
-        $v = Validator::make(request()->all(), ['email' => 'email|required']);
+        $rules = config('tokenized_login.address_validation_rules');
+
+        $v = Validator::make(request()->all(), ['email' => $rules]);
         if ($v->fails()) {
             ResponderFacade::emailNotValid()->throwResponse();
         }
