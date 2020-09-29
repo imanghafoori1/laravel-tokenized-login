@@ -8,7 +8,7 @@ return [
 
     /**
      * The rules to validate the the receiver address.
-     * Usually it is an email address, but maybe a phone number
+     * Usually it is an email address, but maybe a phone number.
      */
     'address_validation_rules' => ['required', 'email'],
 
@@ -57,5 +57,5 @@ return [
      * You may provide a middleware throttler to throttle
      * the requesting and submission of the tokens.
      */
-    'throttler_middleware' => 'throttle:3,1'
+    'throttler_middleware' => 'throttle:3,1',
 ];
