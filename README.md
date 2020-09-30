@@ -106,8 +106,8 @@ If you want to swap the default implementations behind the facades with your own
     'user_provider' => \Imanghafoori\TokenizedLogin\UserProvider::class,
 
     /**
-     * You may provide a middleware throttler to throttle
-     * the requesting and submission of the tokens.
+     * You may provide a middleware to throttle the
+     * requesting and submission of the tokens.
      */
     'throttler_middleware' => 'throttle:3,1',
 
