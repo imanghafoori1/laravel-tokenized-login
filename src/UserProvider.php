@@ -10,7 +10,6 @@ class UserProvider
      * You may also accept user's phone number to send the code via sms.
      *
      * @param $address
-     *
      * @return \Imanghafoori\Helpers\Nullable
      */
     public function getUserByEmail($address)
