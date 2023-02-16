@@ -1,6 +1,6 @@
 {
   "name": "imanghafoori/laravel-tokenize-login",
-  "description": "",
+  "description": "Helps you generate and send a random token to have passwordless login.",
   "keywords": [
     "laravel",
     "laravel-login",
@@ -17,8 +17,8 @@
     }
   ],
   "require": {
-    "php": "^7.1.3|7.2.*|7.3.*|7.4.*|8.*",
-    "laravel/framework":"~5.1|6.*|7.*|8.*|9.*|10.*"
+    "php": "^7.1.3|7.*|8.*",
+    "laravel/framework": "~5.1|6.*|7.*|8.*|9.*|10.*|11.*"
     "imanghafoori/laravel-nullable": "^1.2",
     "imanghafoori/laravel-smart-facades": "^1.0"
   },
