@@ -30,7 +30,7 @@ php artisan vendor:publish
 
 
 
-## Basic usage:
+### Basic usage:
 Basically, this package introduces 2 endpoints, which you can send requests to them.
 
 1. The first one is to generate and send the token to the user
@@ -48,7 +48,7 @@ you can take a look at the source code to find the controllers they refer to.
 
 To disable the default routes you may set: ```'use_default_routes' => false,``` in the tokenized_login config file.
 
-## Customization:
+### Customization:
 You can do a lot of customization and swap the default classes, with your own alternative since we use the larave-smart-facade package.
 Visit the config file to see what you can change.
 
@@ -121,8 +121,6 @@ All the facades have a `shouldProxyTo` method which you can call, but remember n
 ### :raising_hand: Contributing 
 
 If you find an issue or have a better way to do something, feel free to open an issue or a pull request.
-If you use laravel-widgetize in your open-source project, create a pull request to provide its URL as a sample application in the README.md file.
-
 
 ### :exclamation: Security
 If you discover any security related issues, please use the `security tab` instead of using the issue tracker.
