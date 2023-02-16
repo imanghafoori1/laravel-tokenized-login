@@ -2,19 +2,19 @@
 
 return [
     /**
-     * The life time of tokens in seconds.
+     * The lifetime of tokens in seconds.
      */
     'token_ttl' => 120,
 
     /**
-     * The rules to validate the the receiver address.
-     * Usually it is an email address, but maybe a phone number.
+     * The rules to validate the receiver address.
+     * Usually it is an email but maybe a mobile.
      */
     'address_validation_rules' => ['required', 'email'],
 
     /**
      * Here you determine if you are ok with using the routes
-     * defined within the package or you want to define them.
+     * defined in the package or you want to define them yourself.
      */
     'use_default_routes' => true,
 
@@ -37,25 +37,25 @@ return [
     'token_sender' => \Imanghafoori\TokenizedLogin\TokenSender::class,
 
     /**
-     * You can change the way you generate the token by define you own class.
+     * You can change the way you generate the token by defining you own class.
      */
     'token_generator' => \Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator::class,
 
     /**
-     * You can extend Responses class and override
-     * it's methods, to define your own responses.
+     * You can extend the Responses class and override
+     * its methods, to define your own responses.
      */
     'responses' => \Imanghafoori\TokenizedLogin\Http\Responses\Responses::class,
 
     /**
      * You can change the way you fetch the user from your database
-     * by defining a custom user provider class, and set it here.
+     * by defining a custom user provider class and set it here.
      */
     'user_provider' => \Imanghafoori\TokenizedLogin\UserProvider::class,
 
     /**
-     * You may provide a middleware throttler to throttle
-     * the requesting and submission of the tokens.
+     * You may provide a middleware to throttle the
+     * requesting and submission of the tokens.
      */
     'throttler_middleware' => 'throttle:3,1',
 ];
