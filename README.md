@@ -30,7 +30,7 @@ php artisan vendor:publish
 
 
 
-# Basic usage:
+## Basic usage:
 Basically, this package introduces 2 endpoints, which you can send requests to them.
 
 1. The first one is to generate and send the token to the user
@@ -48,27 +48,27 @@ you can take a look at the source code to find the controllers they refer to.
 
 To disable the default routes you may set: ```'use_default_routes' => false,``` in the tokenized_login config file.
 
-# Customization:
-You can do a lot of customization and swap the default classes, with your own altenative since we use the larave-smart-facade package.
+## Customization:
+You can do a lot of customization and swap the default classes, with your own alternative since we use the larave-smart-facade package.
 Visit the config file to see what you can change.
 
 If you want to swap the default implementations behind the facades with your own, you can do it within the `boot` method of any service provider class like this:
 
 ```php
     /**
-     * The life time of tokens in seconds.
+     * The lifetime of tokens in seconds.
      */
     'token_ttl' => 120,
 
     /**
-     * The rules to validate the the receiver address.
+     * The rules to validate the receiver address.
      * Usually it is an email address, but maybe a phone number.
      */
     'address_validation_rules' => ['required', 'email'],
 
     /**
      * Here you determine if you are ok with using the routes
-     * defined within the package or you want to define them.
+     * defined in the package or you want to define them yourself.
      */
     'use_default_routes' => true,
 
@@ -91,19 +91,19 @@ If you want to swap the default implementations behind the facades with your own
     'token_sender' => \Imanghafoori\TokenizedLogin\TokenSender::class,
 
     /**
-     * You can change the way you generate the token by define you own class.
+     * You can change the way you generate the token by defining you own class.
      */
     'token_generator' => \Imanghafoori\TokenizedLogin\TokenGenerators\TokenGenerator::class,
 
     /**
-     * You can extend Responses class and override
-     * it's methods, to define your own responses.
+     * You can extend the Responses class and override
+     * its methods, to define your own responses.
      */
     'responses' => \Imanghafoori\TokenizedLogin\Http\Responses\Responses::class,
 
     /**
      * You can change the way you fetch the user from your database
-     * by defining a custom user provider class, and set it here.
+     * by defining a custom user provider class and set it here.
      */
     'user_provider' => \Imanghafoori\TokenizedLogin\UserProvider::class,
 
