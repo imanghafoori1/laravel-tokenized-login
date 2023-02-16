@@ -10,9 +10,11 @@
 [![StyleCI](https://github.styleci.io/repos/237041801/shield?branch=master)](https://github.styleci.io/repos/237041801)
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=round-square)](LICENSE.md)
 
-This package creates an auto-expiring single-use 6 digit token, which you can send it (can be SMS, email, slack, etc ) to your users and they can login into their account with that token by just sending it back to an endpoint, which is also provided out of the box.
+This package creates an auto-expiring single-use 6-digit token, which you can send (can be SMS, email, slack, etc ) to your users and they can login into their account with that token by just sending it back to an endpoint, which is also provided out of the box.
 
-Exactly like alternate login method in Instagram.
+Exactly like the alternate login method in Instagram.
+
+
 
 You have complete control on how things will happen and you are free to swap the default implementations with your own.
 
@@ -36,7 +38,7 @@ Basically, this package introduces 2 endpoints, which you can send requests to t
 POST '/tokenized-login/request-token?email=iman@example.com'
 ```
 
-2. The second one accepts the token and authoenticates the user if the token was valid.
+2. The second one accepts the token and authenticates the user if the token was valid.
 ```php
 POST '/tokenized-login/login?email=iman@example.com'
 ```
@@ -47,10 +49,10 @@ you can take a look at the source code to find the controllers they refer to.
 To disable the default routes you may set: ```'use_default_routes' => false,``` in the tokenized_login config file.
 
 # Customization:
-You can do a lot of customization and swap the default classes, with your own altenatives since we use the larave-smart-facade package.
+You can do a lot of customization and swap the default classes, with your own altenative since we use the larave-smart-facade package.
 Visit the config file to see what you can change.
 
-If you want to swap the default implementations behind the facades with your own, you can do it within the `boot` method of any service provider class like this :
+If you want to swap the default implementations behind the facades with your own, you can do it within the `boot` method of any service provider class like this:
 
 ```php
     /**
@@ -117,8 +119,9 @@ All the facades have a `shouldProxyTo` method which you can call, but remember n
 --------------------
 
 ### :raising_hand: Contributing 
-If you find an issue, or have a better way to do something, feel free to open an issue or a pull request.
-If you use laravel-widgetize in your open source project, create a pull request to provide it's url as a sample application in the README.md file. 
+
+If you find an issue or have a better way to do something, feel free to open an issue or a pull request.
+If you use laravel-widgetize in your open-source project, create a pull request to provide its URL as a sample application in the README.md file.
 
 
 ### :exclamation: Security
@@ -126,17 +129,17 @@ If you discover any security related issues, please use the `security tab` inste
 
 
 ### :star: Your Stars Make Us Do More :star:
-As always if you found this package useful and you want to encourage us to maintain and work on it. Just press the star button to declare your willing.
 
+As always if you found this package useful and want to encourage us to maintain and work on it. Just press the star button to declare your willingness.
 
 ## More from the author:
 
 
-###  Laravel middlewarize
+###  Laravel microscope
 
-:gem: You can put middleware on any method calls.
+:gem: Test your laravel application without writing tests.
 
-- https://github.com/imanghafoori1/laravel-middlewarize
+- https://github.com/imanghafoori1/microscope
 
 -------------
 
